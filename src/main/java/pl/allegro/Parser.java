@@ -43,7 +43,11 @@ public class Parser {
     private void writeToCSVFile(List<Item> items, String filename) {
         File csvFile = Paths.get("src", "main", "resources", filename + ".csv").toFile();
         try (BufferedWriter bf = new BufferedWriter(new FileWriter(csvFile))) {
-            bf.write("Product name;Old price, PLN;New price, PLNDiscount, %" + '\n');
+            String splitter = ";";
+            bf.write("Product name" + splitter +
+                    "Old price, PLN" + splitter +
+                    "New price, PLN" + splitter +
+                    "Discount, %" + '\n');
             for (Item item : items) {
                 bf.write(item.toString() + '\n');
             }

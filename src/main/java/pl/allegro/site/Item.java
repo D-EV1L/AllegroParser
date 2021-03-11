@@ -16,7 +16,7 @@ public class Item {
 
     @Override
     public String toString() {
-        String splitter = ";"; // Splitter can be ','
+        String splitter = ";";
         return name + splitter + oldPrice + splitter + newPrice + splitter + discount;
     }
 }
